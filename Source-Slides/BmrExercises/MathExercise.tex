@@ -1,0 +1,130 @@
+
+% {\setbeamercolor{background canvas}{bg=red!15}
+
+\begin{frame}[fragile]
+\frametitle{Exercise: Mathematical Notation}
+Add the following lines to the preamble of your document. \\
+\textit{\small If you write a lot of documents with math, you should load these packages in every project!} \\
+\begin{alertblock}{Math Packages}
+    \small
+    \begin{minted}{latex}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{mathtools}
+    \usepackage{bm}
+    \end{minted}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Challenge: Proof of Euler Identity} 
+\begin{alertblock}{Proof of Euler Identity}
+    \textbf{Proof:} Consider the function \( f(t) = e^{-it} \left( \cos{t} + i \sin{t} \right) \) for \(t \in \Re \). 
+    By the product rule
+    \begin{equation}\tag{1}
+        f'(t) 
+            = e^{-it} \left(i \cos{t} 
+            - \sin{t} \right) 
+            - i e^{-it} \left( \cos{t} 
+            + i \sin{t} \right) 
+        = 0
+    \end{equation}
+    identically for all \( t \in \Re \). Hence, $f$ is constant everywhere. Since \( f(0) = 1 \), it follows that \( f(t) = 1 \) identically. Therefore, \( e^{it} = \cos{t} + i \sin{t} \) for all \( t \in \Re \). \(\blacksquare\)
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Challenge: Proof of Euler Identity} 
+\begin{alertblock}{Proof of Euler Identity: Source Code}
+    \small
+    \begin{minted}{latex}
+    \textbf{Proof:} Consider the function \( f(t) 
+        = e^{-it} \left( \cos{t} 
+        + i \sin{t} \right) \) for \(t \in \Re \). 
+    By the product rule
+    \begin{equation}
+        f'(t) = 
+            e^{-it} \left(i \cos{t} - \sin{t} \right) 
+            - i e^{-it} \left( \cos{t}  
+            + i \sin{t} \right) = 0
+    \end{equation}
+    identically for all \( t \in \Re \). Hence, $f$ is 
+    constant everywhere. Since \( f(0) = 1 \), it follows 
+    that \( f(t) = 1 \) identically. 
+    Therefore, \( e^{it} = \cos{t} + i \sin{t} \) for 
+    all \( t \in \Re \). \(\blacksquare\)
+    \end{minted}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Challenge: Laplacian in Spherical Coordinates} 
+\begin{alertblock}{Laplacian in Spherical Coordinates}
+    \begin{gather} \tag{2}
+    \nabla^2 f 
+    = \frac{1}{r} \frac{\partial^2}{\partial r^2} \left( r f \right) 
+    + \frac{1}{r^2 \sin{\theta}} \frac{\partial}{\partial \theta} \left( \sin{\theta} \frac{\partial f}{\partial \theta} \right) 
+    + \frac{1}{r^2 \sin^2{\theta}} \frac{\partial^2 f}{\partial \phi^2} \\ \notag
+    \end{gather}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Challenge: Laplacian in Spherical Coordinates} 
+\begin{alertblock}{Laplacian in Spherical Coordinates: Source Code}
+    \small
+    \begin{minted}{latex}
+    \begin{gather}
+    \nabla^2 f 
+    = \frac{1}{r} \frac{\partial^2}{\partial r^2} 
+    \left( r f \right) 
+    + \frac{1}{r^2 \sin{\theta}} 
+    \frac{\partial}{\partial \theta} 
+    \left( \sin{\theta} 
+    \frac{\partial f}{\partial \theta} \right) 
+    + \frac{1}{r^2 \sin^2{\theta}} 
+    \frac{\partial^2 f}{\partial \phi^2}
+    \end{gather}
+    \end{minted}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Challenge: Divergence Theorem} 
+\begin{alertblock}{Divergence Theorem}
+    \begin{gather} \tag{3}
+    \iiint_v \left( \Vec{\nabla} \cdot \Vec{F} \right) dV = \oiint_s \left( \Vec{F} \cdot \hat{n} \right) dS \\ \notag
+    \end{gather}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Challenge: Divergence Theorem} 
+% \begin{alertblock}{}
+%     \small
+%     \begin{minted}{latex}
+%     \usepackage{esint}
+%     \end{minted}
+% \end{alertblock}
+\begin{alertblock}{Divergence Theorem: Source Code}
+    \small
+    \begin{minted}{latex}
+    \usepackage{esint}
+    
+    \begin{gather}
+    \iiint_v \left( \Vec{\nabla} \cdot \Vec{F} \right) dV 
+    = \oiint_s \left( \Vec{F} \cdot \hat{n} \right) dS 
+    \end{gather}
+    \end{minted}
+\end{alertblock}
+\end{frame}
+
+
+
+% }

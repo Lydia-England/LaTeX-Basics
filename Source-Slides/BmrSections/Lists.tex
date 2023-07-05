@@ -1,0 +1,95 @@
+\begin{frame}[fragile]
+\frametitle{Lists}
+\begin{block}{List Environments in \LaTeX{}}
+The \keytt{itemize} environment creates itemized (unordered) lists. \\ \pause
+The \keytt{enumerate} environment creates numbered (ordered) lists. \\ \pause
+The \keytt{description} environment creates a list of descriptions. \pause
+\end{block}
+Lists in \LaTeX{} are extremely configurable, enabling a wide variety of list types and structures. \\[\baselineskip] \pause
+All lists have the same basic structure:
+\begin{exampleblock}{}
+\small
+\begin{minted}{latex}
+\begin{list_type}
+   \item {The first item}
+   \item The second item 
+   \item The third, etc, etc
+\end{list_type}
+\end{minted}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Lists: Unordered Lists}
+\begin{block}{Itemized List}
+\begin{minted}{latex}
+\begin{itemize}
+    \item First unordered list item
+    \item Second unordered list item
+    \begin{itemize}
+        \item Here's an unordered sub-item
+    \end{itemize}
+\end{itemize}
+\end{minted}    
+\end{block}
+\begin{exampleblock}{}
+\begin{itemize}
+    \item[$\bullet$] First unordered list item
+    \item[$\bullet$] Second unordered list item
+    \begin{itemize}
+        \item[$-$] Here's an unordered sub-item 
+    \end{itemize}
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Lists: Ordered Lists}
+\begin{block}{Enumerated List}
+\begin{minted}{latex}
+\begin{enumerate}
+    \item First ordered list item
+    \item Second ordered list item
+    \begin{enumerate}
+        \item Here's a sub-item
+    \end{enumerate}
+\end{enumerate}
+\end{minted}
+\end{block}
+\begin{exampleblock}{}
+\begin{itemize}
+    \item[1.] First ordered list item
+    \item[2.] Second ordered list item
+    \begin{itemize}
+        \item[(a)] Here's a sub-item
+    \end{itemize}
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Lists: Descriptive Lists}
+\begin{block}{Descriptive List}
+\begin{minted}{latex}
+\begin{description}
+    \item[Label One] First descriptive list item
+    \item[Label Two] Second descriptive list item 
+    \begin{description}
+        \item[Sub-item Label] Here's a sub-item
+    \end{description}
+\end{description}
+\end{minted}
+\end{block}
+\begin{exampleblock}{}
+\begin{description}
+    \item[Label One] First descriptive list item
+    \item[Label Two] Second descriptive list item 
+    \begin{description}
+        \item[Sub-item Label] Here's a sub-item
+    \end{description}
+\end{description}
+\end{exampleblock}
+\end{frame}

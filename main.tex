@@ -1,0 +1,140 @@
+% \documentclass[handout]{beamer}
+\documentclass{beamer}
+
+%%%%%% Load Packages %%%%%%
+\usepackage{xcolor} % font colors
+\usepackage{url}
+% \usepackage[hidelinks]{hyperref}
+\usepackage{minted}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{esint} % double surface integrals etc
+\usepackage{listings} % like figures but for code
+% \usepackage{verbatim}
+% \usepackage{fancyvrb}
+% \usepackage{enumerate}
+\usepackage[shortlabels]{enumitem} % for numbered lists; setlist; shortlabels to define bullet etc.
+\usepackage{tikz}
+\usepackage{comment} % include block comments
+\usepackage{wrapfig} % wrap text around figure 
+\usepackage{graphicx}
+\usepackage{svg}
+
+%%%%%% Set Theme, Color Scheme %%%%%%
+\usetheme{Madrid}
+
+% Change base colour beamer@blendedblue (originally RGB: 0.2,0.2,0.7)
+\colorlet{beamer@blendedblue}{green!40!black}
+
+%%%%%% Page Setup %%%%%%
+\setbeamersize
+{
+    text margin left=1cm,
+    text margin right=1cm
+}
+
+%%%%%% Define Additional Behavior %%%%%%
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection,hideothersubsections]
+  \end{frame}
+} % displaying table of contents slide with highlight before each section
+
+\setbeamertemplate{caption}[numbered] % number figures in beamer
+
+\definecolor{dgreen}{rgb}{0.,0.6,0.} % define dark green color
+
+\newcommand{\keyw}[1]{\textcolor{dgreen}{\emph{#1}}}
+\newcommand{\keytt}[1]{\textcolor{dgreen}{\texttt{#1}}}
+
+
+% \begingroup\makeatletter\def\@currenvir{verbatim}
+
+\robustify\mintinline % ``helps" with minted???
+
+% \setlist[itemize,1]{label=$\times$}
+% \setlist[itemize,2]{label=$\checkmark$}
+% \setlist[itemize,3]{label=$\diamond$}
+% \setlist[itemize,4]{label=$\bullet$}
+
+%%%%%% Document Title Info %%%%%%
+
+\title{A \LaTeX{} Tutorial}
+\author{Lydia England}
+% \institute{Overleaf}
+\date{2022}
+
+% \usepackage{subfiles}
+
+
+%%%%%% Document %%%%%%
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+	\tableofcontents[hideallsubsections]
+\end{frame}
+
+%%%%%% Input Files from Elsewhere in the Project %%%%%%
+\section{Introduction}
+\input{Source-Slides/BmrSections/Intro.tex}
+\input{Source-Slides/BmrExercises/IntroExercise.tex}
+
+\section{Document Structure}
+% \subsection{Document Components}
+\input{Source-Slides/BmrSections/Components.tex}
+\input{Source-Slides/BmrExercises/ComponentsExercise.tex}
+% \subsection{Basic Structure of a Document}
+\input{Source-Slides/BmrSections/Structures.tex}
+\input{Source-Slides/BmrExercises/StructuresExercise.tex}
+
+\section{Formatting Basics}
+\input{Source-Slides/BmrSections/Lists.tex}
+\subsection{Basic Text Manipulation}
+\input{Source-Slides/BmrSections/BasicText.tex}
+\input{Source-Slides/BmrExercises/TextExercise.tex}
+\subsection{Basic Math Notation}
+\input{Source-Slides/BmrSections/BasicMath.tex}
+\input{Source-Slides/BmrExercises/MathExercise.tex}
+\input{Source-Slides/BmrExercises/SM.tex}
+
+%%% challenge %%%
+\input{Source-Slides/BmrExercises/CrossRef.tex}
+
+\section{Floats: Figures and Tables}
+\input{Source-Slides/BmrSections/Floats.tex}
+\input{Source-Slides/BmrSections/Figures.tex}
+% \input{Source-Slides/BmrSections/Tables.tex}
+
+
+% \section{Bibliography Management}
+% \input{Source-Slides/BmrSections/Bibliography.tex}
+
+
+% \section{Advanced Packages (that you should know!)}
+% \input{Source-Slides/BmrSections/Tikz.tex}
+% \input{Source-Slides/BmrSections/Beamer.tex}
+
+
+% \section{Field-Specific Tools}
+% \input{Source-Slides/BmrFieldSpecific/Mathematics.tex}
+% \input{Source-Slides/BmrFieldSpecific/Physics.tex}
+% \input{Source-Slides/BmrFieldSpecific/Chemistry.tex}
+% \input{Source-Slides/BmrFieldSpecific/CS.tex}
+% \input{Source-Slides/BmrFieldSpecific/Engineering.tex}
+% \input{Source-Slides/BmrFieldSpecific/Exams.tex}
+% \input{Source-Slides/BmrFieldSpecific/Chess.tex}
+
+% \section{Resources}
+% \input{Source-Slides/BmrSections/Resources.tex}
+% \input{Samples.tex}
+
+\end{document}

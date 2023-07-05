@@ -1,0 +1,107 @@
+\begin{frame}[fragile]
+\frametitle{Components of a \LaTeX{} Document}
+    \LaTeX{} documents have two primary components: the \keyw{preamble} and the \keyw{body}.\\[\baselineskip] \pause
+    In the preamble, the author can set document geometry, load useful packages, define or redefine commands, and more. \\[\baselineskip] \pause
+    The actual document content lives in the body of the document. \\[\baselineskip] \pause
+    \LaTeX{} file management makes it easy to keep track of document content elements and to reorganize an entire document quickly.
+\end{frame}
+
+
+\begin{frame}[fragile] %{Using \texttt{minted}}
+\frametitle{Components of a \LaTeX{} Document: Preamble}
+\begin{block}{What is the Preamble?}
+    The \emph{preamble} is everything \emph{before} the
+    \verb|\begin{document}|
+    command. 
+    It acts as the document \emph{setup} section.
+\end{block} \pause
+\begin{block}{Within the Preamble:} 
+    \begin{itemize}
+        \item[$\bullet$] Define the document \emph{type} \pause
+        \item[$\bullet$] Load \textit{packages} \pause
+        \item[$\bullet$] Set up document layout, geometry \pause
+        \item[$\bullet$] Define title, author, date information \pause
+        \item[$\bullet$] Include user-defined macros
+    \end{itemize}
+\end{block}
+\end{frame}
+
+
+% \begin{frame}[fragile]
+% \frametitle{Components of a \LaTeX{} Document: Preamble (Packages)}
+    
+% \end{frame}
+
+
+\begin{frame}[fragile]{Using \texttt{minted}}
+\frametitle{Preamble Example \#1}
+\begin{minted}{latex} 
+    \documentclass[12pt, letterpaper]{article}
+    \usepackage{geometry}
+    \usepackage{amsmath}
+    \usepackage[hidelinks]{hyperref}
+    \usepackage{tikz}
+    \title{My first LaTeX document}
+    \author{Jane Doe \thanks{Funded by xxx}}
+    \date{August 2022}
+    \begin{document}
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Using \texttt{minted}}
+\frametitle{Preamble Example \#2}
+\begin{minted}{latex} 
+    \documentclass{beamer}
+    \usepackage{url}
+    \usepackage{minted}
+    \usepackage{listings}
+    \usepackage{enumitem}
+    \usetheme{Madrid}
+    \setbeamersize {
+        text margin left=1cm,
+        text margin right=1cm }
+    \AtBeginSection[] {
+      \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+      \end{frame} }
+    \begin{document}
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Components of a \LaTeX{} Document: Body}
+\begin{block}{Body}
+    The body of a \LaTeX{} document is where all of the text, equations, figures, tables, etc. live.  The body of the document begins with the command \verb|\begin{document}| and ends with the command \verb|\end{document}|.  
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Components of a \LaTeX{} Document: Multiple Files}
+In most \LaTeX{} documents, one has several \keytt{.tex} files --- one for each chapter or section --- joined together into a single output. \pause
+\begin{block}{Input other files}
+\small
+\begin{minted}{latex}
+\begin{document}
+\input{OtherFile.tex}
+\input{AnotherFile.tex}
+\end{document}
+\end{minted}
+\end{block} \pause
+\begin{itemize}[$\bullet$]
+    \item \LaTeX{} compiles these as if it were one continuous file. \pause
+    \item Complex \keytt{Tikz} figures or tables can be written in separate \keytt{.tex} files and loaded at the appropriate places. \pause
+    \item Files that are not loaded into \keytt{main}/referenced by other files loaded into \keytt{main} will not be compiled or rendered. \pause
+    \item Advantage: Easy to rearrange chapters, sections, etc.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Components of a \LaTeX{} Document: Summary}
+    There are two primary elements of any \LaTeX{} document: the \keyw{preamble}, and the document \keyw{body}. \\[\baselineskip] \pause
+    The preamble includes information about the project and its behavior (packages, geometry, user-defined information, commands, aliases, etc.) \\[\baselineskip] \pause
+    The body of the document is where everything else (actual output) goes! \\[\baselineskip] \pause
+    A \LaTeX{} project can include multiple files; these can be referenced internally and their order can be rearranged.
+\end{frame}

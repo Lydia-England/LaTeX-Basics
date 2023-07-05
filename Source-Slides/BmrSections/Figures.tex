@@ -1,0 +1,113 @@
+\begin{frame}[fragile]
+\frametitle{Figures}
+    \begin{wrapfigure}{r}{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.35\textwidth]{img/xkcd1301_file_extensions.png}
+        \caption{File Extensions}
+        \label{fig:xkcd1301}
+    \end{wrapfigure}
+    Images are essential elements of scientific documents. \\
+    Thankfully, \LaTeX{} makes them easy to manipulate with tools like... \pause
+    \begin{itemize}[$\bullet$]
+        \item Figures and subfigures \pause
+        \item Sizing and rotating \pause
+        \item Positioning (absolute or relative) \pause
+        \item Captioning, labelling, and cross-referencing \pause
+        \item  List of Figures
+    \end{itemize}
+\end{frame}
+%%% wrapfigure: this command accepts two mandatory arguments: the first one is to select where we want the image, it can be r or l, that is, right or left; the second one is the width to be reserved for the image
+
+
+\begin{frame}[fragile]
+\frametitle{Figures: The Graphicx Package}
+\LaTeX{} does not manage images by itself, so we include the \keytt{graphicx} package. \\ \pause
+The \keytt{graphicx} package provides the ability to reference files from filepaths within a project. \\[\baselineskip] \pause
+To load the package (in the preamble):
+\begin{exampleblock}{}
+    \begin{minted}{latex}
+    \usepackage{graphicx}
+    \end{minted}
+\end{exampleblock} \pause
+\vspace{0.2cm}
+The most useful commands in this package are the \texttt{includegraphics} command and the \texttt{graphicspath} command:
+\begin{exampleblock}{}
+    \begin{minted}{latex}
+    \includegraphics[keys]{filename}
+    \graphicspath{ {path} }
+    \end{minted}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Figures: Folders and Paths}
+It is good practice to keep images in one or more separated folders so your project is organized.\\ \pause
+You can tell \LaTeX{} where to look for images... \pause
+\begin{block}{\small Path relative to current working directory}
+\small \mintinline{latex}{ \graphicspath{ {img/} }} tells \LaTeX{} to look for images in the \texttt{img} folder relative to the current working directory.
+\end{block} \pause
+\begin{block}{\small Path relative to \texttt{main} file}
+\small \mintinline{latex}{\graphicspath{ {./img/} }} tells \LaTeX{} to look for images in the \texttt{img} folder relative to the \texttt{main} file (denoted as \texttt{./} ).
+\end{block} \pause
+\small \textit{The path can also be \emph{absolute} if the exact location on your file system is specified.} \\ \pause
+\textit{Or you can skip the declaration and reference the filepath directly every time instead.}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Figures: Positioning}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Figures: Positioning}
+\begin{columns}
+    \column{0.6\linewidth}
+    The \keytt{figure} environment provides automatic positioning. 
+    It uses a positioning parameter passed inside brackets. \\%\\[\baselineskip]
+    \small \textit{Think of the positioning parameter as adjusting the ``settings'' on \LaTeX{}'s internal  algorithms.} \\[\baselineskip]
+    \column{0.4\linewidth}
+    \includegraphics[width=\textwidth]{img/memes/hFloatFreeRealEstate.jpg}
+\end{columns}
+\begin{exampleblock}{}%{\small Figure Positioning Parameters}
+\begin{table}[]
+    \centering
+    \small
+    \def\arraystretch{1.25}
+    \begin{tabular}{c l}
+        h & ~~Place the float approximately \keyw{here}. \\
+        \hline
+        t & ~~Position at the \keyw{top} of the page. \\
+        \hline
+        b & ~~Position at the \keyw{bottom} of the page. \\
+        \hline
+        p & ~~Put on a special \keyw{page} for floats only.  \\
+        \hline
+        ! & ~~Override internal \LaTeX{} parameters. \\
+        \hline
+        H & ~~Place the float exactly \keyw{here}. (Similar to ``h!'')
+    \end{tabular}
+    % \caption{Figure Positioning Parameters}
+\end{table}
+\end{exampleblock}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Figures: Captioning, Labeling, and Cross-Referencing}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Figures: List of Figures}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Figures: Subfigures}
+\end{frame}

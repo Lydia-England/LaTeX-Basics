@@ -1,0 +1,576 @@
+\begin{frame}[fragile]
+\frametitle{Basic Math Notation with \LaTeX{}}
+Typesetting mathematical expressions is one of \LaTeX{}'s greatest strengths --- and one of the primary motivations which drove Donald Knuth to develop the original TeX system. \\[\baselineskip]
+\LaTeX{} provides thousands of different mathematical symbols and supports multiple different math environments. \\[\baselineskip]
+\LaTeX{} is the mathematical typesetting standard in all technical disciplines and in many related fields.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Math Modes}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+    \textbf{Display Style Math Mode} \\
+    \textit{Puts math on display} \\
+    \vspace{0.4cm}
+    \fbox{\parbox{\textwidth}{\small It follows that
+    \begin{align}
+        T(\Vec{u}) & = \sum^n_{j=1} \sum^m_{k=1} M_{jk} x_k \Vec{w}_j 
+    \end{align}
+    Examination of this formula shows that
+    \[y_j = \sum^m_{k=1} M_{jk} x_k\]
+    }}
+\end{center}
+
+\column{0.5\textwidth}
+\begin{center}
+    \textbf{Inline (text) Style Math Mode} \\
+    \textit{Math stays in the line} \\
+    \vspace{0.4cm}
+     \fbox{\parbox{\textwidth}{\small But if $T: V \to W$ is a linear transformation then $T(\vec{u}) = T(x_1 \Vec{v}_1 + x_2 \Vec{v_2} + ... + x_m \Vec{m})$. 
+     Moreover, because we know that \(T(\Vec{v}_1), T(\Vec{v}_2),...,T(\Vec{v}_m)\) are the elements of the vector space \(W\), we can therefore write 
+        \(T(\Vec{v}_k) = \sum^n_{j=1} M_{jk} \Vec{w}_j \) where the quantities \(M_{jk}\) are scalars. \\[\baselineskip]
+    }}
+\end{center}
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: Display} 
+% \textbf{Display Style Math Mode} \\
+\begin{block}{Delimiters for Display Math Mode}
+\small
+Primary delimiters: \verb|\begin{displaymath} ... \end{displaymath}| \\
+Short form \LaTeX{} delimiters: \verb|\[ ... \]| \\
+Short form TeX delimiters: \verb|$$ ... $$| \\
+\end{block}
+\begin{exampleblock}{}
+\small
+\begin{minted}{latex}
+    \[ \iiint\limits_S dV 
+        =   \int^{2\pi}_{\phi=0}
+            \int^{\pi}_{\theta=0}  
+            \int^{r}_{\rho=0} 
+            \rho^2 d\cos{\theta} d\phi \]
+\end{minted}
+    \[ \iiint\limits_S dV = \int^{2\pi}_{\phi=0} \int^{\pi}_{\theta=0} \int^{r}_{\rho=0} \rho^2 d\cos{\theta} d\phi \]
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: Inline} 
+% \textbf{Display Style Math Mode} \\
+\begin{block}{Delimiters for Inline Math Mode}
+\small
+Primary delimiters: \verb|\begin{math} ... \end{math}| \\
+Short form \LaTeX{} delimiters: \verb|\( ... \)| \\
+Short form TeX delimiters: \verb|$ ... $| \\
+\end{block}
+% \textbf{Example:} 
+\vspace{0.3cm}
+\small
+\begin{minted}{latex}
+\( p(x) = a_n x^n + a_{n-1} x^{n-1} + a_{n-2} x^{n-2} 
+        + ... + a_2 x^2 + a_1 x + a_0 \)
+
+$c^2 = a^2 + b^2 - 2ab\cos{\theta}$
+\end{minted}
+\vspace{0.3cm}
+\( p(x) = a_n x^n + a_{n-1} x^{n-1} + a_{n-2} x^{n-2} 
+        + ... + a_2 x^2 + a_1 x + a_0 \) \\[\baselineskip]
+\vspace{0.3cm}
+$c^2 = a^2 + b^2 - 2ab\cos{\theta}$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: Which one should you use?}
+\begin{columns}
+    \column{0.5\linewidth}
+    \textbf{Use display style math when...}
+    \begin{itemize}
+        \item[$\bullet$] The mathematical expression is set apart from the main text
+        \item[$\bullet$] You want to number an equation (and possibly label and reference it later in the document)
+    \end{itemize}
+    \column{0.5\linewidth}
+    \textbf{Use inline style math when...}
+    \begin{itemize}
+        \item[$\bullet$] The mathematical expression is included within a line or paragraph of text
+        \item[$\bullet$] You are referencing a variable in a line of text (i.e., ``We have the variables $x$, $y$, and $z$)
+    \end{itemize}
+\end{columns}
+\begin{block}{Change style within mode}
+Force display math in inline mode: \verb|\( \displaymath ... \)| \\
+Force inline style math in display mode: \verb|\[ \textstyle ... \]| \\
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: Examples}
+\begin{exampleblock}{Display Style / Inline Mode}
+    \small The Basel problem is the problem of computing the sum of the squares of the reciprocals of natural numbers. It turns out that \( \displaystyle \sum^\infty_{n=1} \frac{1}{n^2} = \frac{\pi^2}{6}\). In 1735, Euler proved this result.
+\end{exampleblock}
+\begin{exampleblock}{Inline Style / Inline Mode}
+    \small The Basel problem is the problem of computing the sum of the squares of the reciprocals of natural numbers. It turns out that \( \sum^\infty_{n=1} \frac{1}{n^2} = \frac{\pi^2}{6}\). In 1735, Euler proved this result.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: Examples}
+\begin{exampleblock}{Inline Style / Display Mode}
+    \small The Basel problem is the problem of computing the sum of the squares of the reciprocals of natural numbers. It turns out that \[ \textstyle \sum^\infty_{n=1} \frac{1}{n^2} = \frac{\pi^2}{6}\] In 1735, Euler proved this result.
+\end{exampleblock}
+\begin{exampleblock}{Display Style / Display Mode}
+    \small The Basel problem is the problem of computing the sum of the squares of the reciprocals of natural numbers. It turns out that \[ \sum^\infty_{n=1} \frac{1}{n^2} = \frac{\pi^2}{6}\] In 1735, Euler proved this result.
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: \texttt{amsmath} Package}
+\begin{itemize}
+    \item[$\bullet$] Developed for the American Mathematical Society (AMS)
+    \item[$\bullet$] Principle package of the AMS-\LaTeX{} distribution
+    \item[$\bullet$] Provides additional features to facilitate mathematical typesetting
+    \item[$\bullet$] \textit{You should be using this package in any document with mathematical notation} 
+    \item[$\bullet$] \verb|\usepackage{amsmath}|
+\end{itemize}
+% \begin{centering}
+% \includegraphics[width=0.5\linewidth]{img/ams_logo.png}
+% \end{centering}
+\tikz[remember picture, overlay] {\node[anchor=south east, outer sep=15pt] at (current page.south east) {\includegraphics[width=5cm]{img/ams_logo.png}};}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: \texttt{amsmath} Package} 
+\begin{block}{Writing a Single Equation}
+    \verb|\begin{equation} ... \end{equation}| \\
+\end{block}
+To write an equation, use the \verb|\equation| or \verb|\*equation| environment depending on if you want your equation numbered. % Additionally, labels can be added with \verb|\label{}| to reference the equation later within the document.
+\begin{exampleblock}{Example}
+\small
+\begin{minted}{latex}
+\begin{equation} \label{eu_eqn}
+e^{\pi i} + 1 = 0
+\end{equation}
+
+The beautiful equation \ref{eu_eqn} is known as the Euler
+equation.
+\end{minted}
+\begin{equation} \label{eu_eqn}
+e^{\pi i} + 1 = 0
+\end{equation}
+
+The beautiful equation~\ref{eu_eqn} is known as the Euler
+equation.
+\end{exampleblock}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: \texttt{amsmath} Package} 
+\begin{block}{Displaying Long Equations}
+    \verb|\begin{multline} ... \end{multline}| \\
+\end{block}
+For equations longer than a line, use the \verb|multline| or \verb|multline*| environment. Use a double backslash to indicate where the equation should be broken.
+\begin{exampleblock}{Example}
+\small
+\begin{minted}{latex}
+\begin{multline*}
+p(x) = 3x^6 + 14x^5y + 590x^4y^2 + 19x^3y^3\\ 
+- 12x^2y^4 - 12xy^5 + 2y^6 - a^3b^3
+\end{multline*}
+\end{minted}
+\begin{multline*}
+p(x) = 3x^6 + 14x^5y + 590x^4y^2 + 19x^3y^3\\ 
+- 12x^2y^4 - 12xy^5 + 2y^6 - a^3b^3
+\end{multline*}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: \texttt{amsmath} Package} 
+\begin{block}{Splitting and Aligning an Equation }
+\small
+\verb|\begin{equation}\begin{split} ... \end{split}\end{equation}| \\
+\end{block}
+\verb|Split| is similar to \verb|multline|. It is used to break an equation and align it in columns. It is used within an \verb|equation| environment. 
+\begin{exampleblock}{Example}
+\small
+\begin{minted}{latex}
+\begin{equation} \begin{split}
+A & = \frac{\pi r^2}{2} \\
+ & = \frac{1}{2} \pi r^2
+\end{split} \end{equation}
+\end{minted}
+\begin{equation} \begin{split}
+A & = \frac{\pi r^2}{2} \\
+ & = \frac{1}{2} \pi r^2
+\end{split} \end{equation}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: \texttt{amsmath} Package} 
+\begin{block}{Aligning Several Equations}
+\small
+\verb|\begin{align} ... \end{align}| \\
+\end{block}
+To align several equations vertically, use the \verb|align| environment. The ampersand character \& determines where equations align.
+\begin{exampleblock}{Example}
+\small
+\begin{minted}{latex}
+\begin{align*}
+x&=y           &  w &=z              &  a&=b+c\\
+-4 + 5x&=2+y   &  w+2&=-1+w          &  ab&=cb
+\end{align*}
+\end{minted}
+\begin{align*}
+x&=y           &  w &=z              &  a&=b+c\\
+-4 + 5x&=2+y   &  w+2&=-1+w          &  ab&=cb
+\end{align*}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: \texttt{amsmath} Package} 
+\begin{block}{Grouping and Centering Equations}
+\small
+\verb|\begin{align} ... \end{align}| \\
+\end{block}
+To display a set of consecutive equations, centered, with no alignment, use the \verb|gather| environment.
+\begin{exampleblock}{Example}
+\small
+\begin{minted}{latex}
+\begin{gather*} 
+2x - 5y =  8 \\ 
+3x^2 + 9y =  3a + c
+\end{gather*}
+\end{minted}
+\begin{gather*} 
+2x - 5y =  8 \\ 
+3x^2 + 9y =  3a + c
+\end{gather*}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: \texttt{amsmath} Package} 
+% \textbf{Display Style Math Mode} \\
+\begin{block}{Environments for Display Math Mode (Numbered)}
+\small
+\verb|\begin{equation} ... \end{equation}| \\
+\verb|\begin{align} ... \end{align}| \\
+\verb|\begin{gather} ... \end{gather}| \\
+\verb|\begin{multline} ... \end{multline}| \\
+\end{block}
+\begin{exampleblock}{}
+\small
+\begin{minted}{latex}
+\begin{equation}
+    \iiint\limits_S dV 
+        =   \int^{2\pi}_{\phi=0} 
+            \int^{\pi}_{\theta=0}
+            \int^{r}_{\rho=0} 
+            \rho^2 d\cos{\theta} d\phi
+\end{equation}
+\end{minted}
+    \begin{equation}
+        \iiint\limits_S dV 
+        =   \int^{2\pi}_{\phi=0} 
+            \int^{\pi}_{\theta=0} 
+            \int^{r}_{\rho=0} 
+            \rho^2 d\cos{\theta} d\phi
+    \end{equation}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Modes: \texttt{amsmath} Package} 
+% \textbf{Display Style Math Mode} \\
+\begin{block}{Environments for Display Math Mode (Unnumbered)}
+\small
+\verb|\begin{equation*} ... \end{equation*}| \\
+\verb|\begin{align*} ... \end{align*}| \\
+\verb|\begin{gather*} ... \end{gather*}| \\
+\verb|\begin{multline*} ... \end{multline*}| \\
+\end{block}
+\begin{exampleblock}{}
+\small
+\begin{minted}{latex}
+\begin{equation*}
+    \iiint\limits_S dV 
+        =   \int^{2\pi}_{\phi=0} 
+            \int^{\pi}_{\theta=0}
+            \int^{r}_{\rho=0} 
+            \rho^2 d\cos{\theta} d\phi
+\end{equation*}
+\end{minted}
+    \begin{equation*}
+        \iiint\limits_S dV 
+        =   \int^{2\pi}_{\phi=0} 
+            \int^{\pi}_{\theta=0} 
+            \int^{r}_{\rho=0} 
+            \rho^2 d\cos{\theta} d\phi
+    \end{equation*}
+\end{exampleblock}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Subscripts and Superscripts}
+\begin{block}{Subscripts}
+    Subscripts are written as \verb|a_b|, displaying as $a_b$. 
+\end{block}
+\begin{block}{Superscripts}
+    Superscripts are written as \verb|a^b|, displaying as $a^b$.
+\end{block}
+\begin{block}{Combining Superscripts and Subscripts}
+    Superscripts and subscripts can be combined and nested:
+    \begin{itemize}
+    \item \small \verb| T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q} | \\
+    \verb| = T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) | 
+    \\ displays as \[ T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q} = T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \] 
+    \end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Integrals and Summations}
+\begin{block}{Integrals}
+    Integrals are written as \verb|\int|, displaying as $\int$. \\
+    Closed integrals are written as \verb|\oint|, displaying as $\oint$. \\
+    Limits are placed on integrals with superscripts and subscripts.\\
+    \textit{Example:} \verb|\int_a^b x^2 dx| displays as $\int_a^b x^2 dx$.\\
+\end{block}
+\begin{block}{Summations}
+    Summations are written as \verb|\sum|, displaying as $\sum$. \\
+    \textit{Limits (inline):} \verb|\(\sum_{n=1}^{\infty})\| displays as $\sum_{n=1}^{\infty}$.\\
+    \textit{Limits (display):} \verb|\[\sum_{n=1}^{\infty}]\| displays as \[\sum_{n=1}^{\infty}\]
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Fractions}
+    \begin{block}{Fractions}
+    Fractions can be written several different ways:
+    \begin{itemize}
+    \item Inline mode, without fraction formatting:
+        \begin{itemize}
+        \item[$\bullet$] \verb|\(p(x) = (a x^2 + b x)/(d x + c)\)| 
+        \item displays as $p(x) = (a x^2 + b x)/(d x + c)$
+        \end{itemize}
+    \item Inline mode, with fraction formatting:
+        \begin{itemize}
+        \item[$\bullet$] \verb|\( p(x) = \frac{a x^2 + b x}{d x + c} \)| 
+        \item displays as \( p(x) = \frac{a x^2 + b x}{d x + c}\)
+        \end{itemize}
+    \item Display mode, with fraction formatting:
+        \begin{itemize}
+        \item[$\bullet$] \verb|\[ p(x) = \frac{a x^2 + b x}{d x + c}\]| 
+        \item displays as 
+        \end{itemize}
+    \item \[ p(x) = \frac{a x^2 + b x}{d x + c}\]
+    \end{itemize}
+\end{block} 
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Greek Letters, Arrows}
+\begin{block}{Greek Letters}
+    Lower case Greek letters are written as:
+    \begin{itemize}
+        \item \verb|$\omega$| (displaying as $\omega$), 
+        \item \verb|$\delta$| (displaying as $\delta$), etc.
+    \end{itemize}
+    While upper case Greek letters are written as 
+    \begin{itemize}
+        \item \verb|$\Omega$| (displaying as $\Omega$), 
+        \item \verb|$\Delta$| (displaying as $\Delta$), etc.
+    \end{itemize}
+\end{block}  
+\begin{block}{Arrows (non-exhaustive list)}
+    \begin{columns}
+    \column{0.1\linewidth}
+        \verb|\leftarrow| 
+        \verb|\rightarrow|
+        \verb|\uparrow|
+        \verb|\Uparrow|
+        \verb|\mapsto|
+    \column{0.1\linewidth} 
+        $~~\leftarrow$ \\
+        $~~\rightarrow$\\
+        $~~\uparrow$\\
+        $~~\Uparrow$\\
+        $~~\mapsto$
+    \column{0.1\textwidth}
+        \verb|\Leftarrow| 
+        \verb|\Rightarrow|
+        \verb|\downarrow|
+        \verb|\Downarrow|
+        \verb|\longmapsto|
+     \column{0.1\linewidth} 
+        $~~\Leftarrow$ \\
+        $~~\Rightarrow$\\
+        $~~\downarrow$\\
+        $~~\Downarrow$\\
+        $~~\longmapsto$   
+    \end{columns}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Math Symbols}
+The \texttt{amssymb} package provides many common mathematical symbols. \\
+    \begin{block}{Math Symbols (non-exhaustive list)}
+    \begin{columns}
+    \column{0.1\linewidth}
+        \verb|\infty| 
+        \verb|\Re|
+        \verb|\forall|
+        \verb|\nabla|
+        \verb|\partial|
+        \verb|\square|
+    \column{0.1\linewidth} 
+        $~~$ \infty \\
+        $~~$ \Re \\
+        $~~$ \forall \\
+        $~~$ \nabla \\
+        $~~$ \partial \\
+        $~~$ \square
+    \column{0.1\textwidth}
+        \verb|\triangle| 
+        \verb|\Im|
+        \verb|\exists|
+        \verb|\nexists|
+        \verb|\cdots|
+        \verb|\blacksquare|
+     \column{0.1\linewidth} 
+        $~~\triangle$ \\
+        $~~\Im$ \\
+        $~~\exists$ \\
+        $~~\nexists$ \\
+        $~~\cdots$ \\
+        $~~\blacksquare$
+    \end{columns}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Operators}
+    Mathematical operators are prefixed with a backslash. Arguments can be delimited with curly braces, but don't have to be.
+\begin{block}{Operators (non-exhaustive list)}
+    \begin{columns}
+    \column{0.15\linewidth}
+        \verb|\sin{x}| \\
+        \verb|\cos{x}| \\
+        \verb|\tan{x}| \\
+        \verb|\sec{x}| \\
+        \verb|\sinh | \\
+        \verb|\det(A)| \\
+        \verb|\lim_{h\to 0}| \\
+        \verb|\min(a, b)| \\
+        \verb|\ln(x)| \\
+    \column{0.15\linewidth} 
+        $~~ \sin{x} $ \\
+        $~~ \cos{x} $ \\
+        $~~ \tan{x} $ \\
+        $~~ \sec{x} $ \\
+        $~~ \sinh x $ \\
+        $~~ \det(A)$\\
+        $~~ \lim_{h \to 0 } $ \\
+        $~~ \min(a,b)$ \\
+        $~~ \ln(x)$ \\
+    \column{0.15\textwidth}
+        \verb|\arcsin x| \\
+        \verb|\arccos x| \\
+        \verb|\arctan x| \\
+        \verb|\cot x| \\
+        \verb|\cosh x| \\
+        \verb|\coth x| \\
+        \verb|\ker{A}| \\
+        \verb|\max(a,b) | \\
+        \verb|\log(x) | \\
+     \column{0.15\linewidth} 
+        $~~ \arcsin x $ \\
+        $~~ \arccos x $ \\
+        $~~ \arctan x $ \\
+        $~~ \cot x $ \\
+        $~~ \cosh x $ \\
+        $~~ \coth x $ \\
+        $~~ \ker{A} $ \\
+        $~~ \max(a,b)$ \\
+        $~~ \log(x) $
+    \end{columns}
+\end{block}
+Operators without arguments should include empty curly braces (like \verb|\arcsin{}|) or should be followed by a tilde (like \verb|\sinh~|).
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Basic Math Notation: Essential Packages}
+\begin{itemize}
+    \item[$\bullet$] \texttt{amsmath} enhances math mode, provides symbols, math environments, alignment options, and more.
+    \item[$\bullet$] \texttt{amssymb} provides extra math symbols.
+    \item[$\bullet$] \texttt{mathtools} is based on \texttt{amsmath}; it fixes several deficiencies.
+    \item[$\bullet$] \texttt{bm} provides support for boldface in math mode.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{More fun math mode things!}
+    \begin{itemize}
+        \item[$\bullet$] Matrices (\verb|\vmatrix, \pmatrix, \bmatrix, \matrix|)
+        \item[$\bullet$] Parenthesis sizing with \verb|\left(|, \verb|\right)|, big, bigg, Bigg, etc.
+        \item[$\bullet$] \verb|\varepsilon| and \verb|\varphi|
+        \item[$\bullet$] \verb|\varnothing| vs. \verb|\emptyset|
+        \item[$\bullet$] Binomials (\verb|\binom{n}{k}|)
+        \item[$\bullet$] Hats, bars, and vectors 
+            (\verb|\hat{i}|, \verb|\widehat{G}|, \verb|\Bar{p}, \overline{lmnop}, \Vec{v}|)
+        \item[$\bullet$] Non-breaking space with tilde (\verb|~|)
+        \item[$\bullet$] Labels and internal references 
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Basic Math Notation: Summary}
+\LaTeX{} has two math modes/styles, each having several delimiter options: 
+\begin{itemize}
+    \item Inline (for math expressions within lines of text)
+    \item Display (for separate math expressions)
+\end{itemize} \pause
+The most common \LaTeX{} package for math expressions is \texttt{amsmath}:
+\begin{itemize}
+    \item Options: Equation, Split, Multline, Align, Gather
+\end{itemize} \pause
+Mathematical expressions can include:
+\begin{itemize}
+    \small
+    \item Superscripts, Subscripts (\verb|a^b, a_b, a^{spr}, b_{sub}|)
+    \item Integrals, Summations (\verb|\int, \sum, \int_a^b, \sum_{x=1}^n|)
+    \item Fractions (\verb|\frac{numerator}{denominator}|)
+    \item Symbols (Greek letters, arrows, etc.)
+    \item Operators (\verb|\operator{argument}|)
+\end{itemize}
+\end{frame}
